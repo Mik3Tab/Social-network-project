@@ -1,6 +1,6 @@
-const {Product} = require("../models/Product");
+const Product = require("../models/Product");
 
-const ProductController ={
+const PostController ={
     async create(req,res){
         try {
             const product = await Product.create({...req.body })
