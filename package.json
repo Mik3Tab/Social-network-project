@@ -1,5 +1,5 @@
 {
-  "name": "project-mongoose",
+  "name": "social-network-project",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.9",
     "nodemon": "^2.0.15"
   }
