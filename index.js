@@ -7,10 +7,12 @@ const PORT = 3000;
 
 app.use(express.json());
 
+app.use('/posts', require('./routes/posts'));
+app.use('/users', require('./routes/users'));
+
 mongoose
   .connect(MONGO_URI, { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => console.log("conectado a mongoDB con éxito"))
   .catch((err) => console.error(err));
 
-app.listen(PORT, console.log(`Servidor levantado en el puerto: ${PORT}`));
-
+app.listen(PORT, console.log(`Servidor levantado en el puerto: `, PORT));
