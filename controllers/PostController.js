@@ -1,7 +1,11 @@
 const Post = require("../models/Post");
+const User = require("../models/User");
 const PostController ={
     async create(req,res){
         try {
+            if(!req.body.name || !req.body.email || !req.body.password){
+                return res.status(400).json({msg:'Por favor rellene los campos que faltan'});
+            }
             const post = await Post.create(req.params.body)
             res.status(201).send(post)
         } catch (error) {
@@ -36,7 +40,7 @@ const PostController ={
         }
     }, async update(req, res) {
         try {
-          const post = await Product.findByIdAndUpdate(req.params._id, req.body, { new: true })
+          const post = await Post.findByIdAndUpdate(req.params._id, req.body, { new: true })
           res.send({ message: "Post actualizado correctamente", post });
         } catch (error) {
           console.error(error);
@@ -60,4 +64,5 @@ const PostController ={
 
 
 }
+
 module.exports = PostController;
