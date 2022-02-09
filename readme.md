@@ -30,7 +30,7 @@ USUARIOS
 
 [] Validación en el login:
 
-[x] Si no has confirmado tu correo no puedes conectarte
+[] Si no has confirmado tu correo no puedes conectarte
 
 [] Endpoint que nos traiga la información del usuario conectado
 

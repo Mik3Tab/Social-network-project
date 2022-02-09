@@ -1,14 +1,36 @@
-const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken')
-const {jwt_secret} = require('../config/keys.js')
-const UserSchema = new moongose.Schema({
-    name: String,
-    email: String,
-    password: String,
-    age: Number,
-    tokens: []
-}, {timestamps: true});
+const mongoose = require("mongoose");
+const ObjectId = mongoose.SchemaTypes.ObjectId;
 
-const User = mongoose.model('User', UserSchema);
+const UserSchema = new mongoose.Schema(
+  {
+    name: String,
+    password: String,
+    email: String,
+    role: String,
+    tokens: [],
+    followers: [],
+    verified: {
+      type: Boolean,
+      default: false,
+    },
+    postId: [
+      {
+        type: ObjectId,
+        ref: "Post",
+      },
+    ],
+    followersId: [{ type: String, ref: "User" }],
+  },
+  { timestamps: true }
+);
+UserSchema.methods.toJSON = function () {
+  const user = this._doc;
+  delete user.tokens;
+  delete user.updatedAt;
+  delete user.__v;
+  return user;
+};
+
+const User = mongoose.model("User", UserSchema);
 
 module.exports = User;

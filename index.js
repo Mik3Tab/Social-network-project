@@ -6,6 +6,7 @@ const { MONGO_URI } = require("./config/keys");
 const PORT = 3000;
 
 app.use(express.json());
+app.use('/posts', require('./routes/posts'));
 app.use('/users', require('./routes/users'));
 
 mongoose
