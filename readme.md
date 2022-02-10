@@ -16,23 +16,23 @@ POSTS:
 [x] Implementa validación a la hora de crear un post para que se rellene todos los campos(salvo la imagen, que no sea requerida) y si no se hace que devuelva un mensaje
 
 [x] Paginación de 10 en 10
-[] Likes:
-        [] Endpoint para dar un like a un post
-        [] Endpoint para quitar like a un post
+[x] Likes:
+        [x] Endpoint para dar un like a un post
+        [x] Endpoint para quitar like a un post
 
 USUARIOS
 
 [x] Endpoint para registrar un usuario utilizando bcrypt
 
-[] Implementa el correo de confirmación para el registro
+[x] Implementa el correo de confirmación para el registro
 
 [x] Endpoint para login(utilizando bcrypt +JWT)
 
-[] Validación en el login:
+[x] Validación en el login:
 
-[] Si no has confirmado tu correo no puedes conectarte
+[x] Si no has confirmado tu correo no puedes conectarte
 
-[] Endpoint que nos traiga la información del usuario conectado
+[x] Endpoint que nos traiga la información del usuario conectado
 
 [x] Endpoint para el logout
 

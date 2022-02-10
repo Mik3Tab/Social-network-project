@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema(
         ref: "Post",
       },
     ],
-    followersId: [{ type: String, ref: "User" }],
+    followersId: [{ type: String, ref: "User" }]
   },
   { timestamps: true }
 );

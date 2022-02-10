@@ -5,11 +5,12 @@ const {auth} = require("../middlewares/tokenValidation");
 
 
 router.get('/getAll', auth, UserController.getAll);
-router.get('/getById/:id', auth, UserController.findById);
+router.get('/getById/:_id', auth, UserController.findById);
 router.get("findByName/:name", auth, UserController.findbyName);
 router.get("/confirm/:emailToken", UserController.confirm);
-router.get("/options/profile", auth, UserController.myProfile);
+router.get("/profile", auth, UserController.myProfile);
 router.get("/getCurrentUser/", auth, UserController.getCurrentUser);
+
 router.post('/login', UserController.login);
 router.post('/register', UserController.create);
 

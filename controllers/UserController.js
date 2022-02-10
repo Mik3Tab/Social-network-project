@@ -7,7 +7,10 @@ const { find } = require("../models/User");
 
 const UserController = {
   async getAll(req, res) {
-    const users = await User.find().populate("postId");
+    const { page = 1, limit = 10 } = req.query;
+    const users = await User.find().populate("postId")
+      .limit(limit)
+      .skip((page - 1) * limit);
     res.send(users);
   },async getCurrentUser(req,res){
     const users = await User.findById(req.user._id);
@@ -15,23 +18,27 @@ const UserController = {
   },
   async create(req, res) {
     try {
+      if(!req.body.name || !req.body.password || !req.body.email){
+        return res.status(400).json({msg:'Por favor rellene los campos que faltan'});
+    }
       const hash = bcrypt.hashSync(req.body.password, 10);
-      const user = await User.create({ ...req.body, password: hash });
-    //   const emailToken = jwt.sign({ email: req.body.email }, jwt_secret);
-    //   const url = "http://localhost:3000/users/confirm/" + emailToken;
-    //   await transporter.sendMail({
-    //     to: req.body.email,
-    //     subject: "Account verification",
-    //     html: `<h2>Bienvenido, estás punto de registrarte </h2>
-    //     <a href="${url}"> Click para confirmar tu registro!</a>
-    //     `,
-    //   });
+      const user = await User.create({ ...req.body, password: hash,role:'user',verified:false });
+      const emailToken = jwt.sign({ email: req.body.email }, jwt_secret);
+      const url = "http://localhost:3000/users/confirm/" + emailToken;
+      await transporter.sendMail({
+        to: req.body.email,
+        subject: "Account verification",
+        html: `<h2>Bienvenido, estás punto de registrarte </h2>
+        <a href="${url}"> Click para confirmar tu registro!</a>
+        `,
+      });
       res.status(201).send({message: 'Usuario creado correctamente', user})}
          catch (error) {
       console.log(error);
       res.send("Algo ha ido mal");
     }
   },
+
   async login(req, res) {
     const user = await User.findOne({ email: req.body.email });
     console.log(user);
@@ -77,7 +84,7 @@ const UserController = {
       const user = await User.findOne({ email: payload.email });
       user.verified = true;
       user.save();
-      res.status(201).send(user);
+      res.status(201).send({message: "Te has registrado correctamente!"});
     } catch (error) {
       console.log(error);
     }

@@ -4,7 +4,7 @@ const User = require("../models/User");
 const PostController = {
   async find(req, res) {
     const { page = 1, limit = 10 } = req.query;
-    const posts = await Post.find()
+    const posts = await Post.find().populate("userId","id")
       .limit(limit)
       .skip((page - 1) * limit);
     res.send(posts);
@@ -100,7 +100,6 @@ const PostController = {
             comments: {
               ...req.body,
               userId: req.user._id,
-              userName: req.user.name,
             },
           },
         },
