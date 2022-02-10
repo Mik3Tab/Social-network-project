@@ -18,6 +18,7 @@ POSTS:
 [x] Paginación de 10 en 10
 
 [x] Likes:
+        
         [x] Endpoint para dar un like a un post
         
         [x] Endpoint para quitar like a un post
