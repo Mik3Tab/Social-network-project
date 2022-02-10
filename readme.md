@@ -1,6 +1,7 @@
 --Proyecto red social--
 
 POSTS:
+
 [x] Endpoint para crear un post( tiene que estar autenticado)
 
 [x] Endpoint para actualizar un post ( tiene que estar autenticado)
@@ -16,8 +17,16 @@ POSTS:
 [x] Implementa validación a la hora de crear un post para que se rellene todos los campos(salvo la imagen, que no sea requerida) y si no se hace que devuelva un mensaje
 
 [x] Paginación de 10 en 10
+<<<<<<< HEAD
 [x] Likes:
         [x] Endpoint para dar un like a un post
+=======
+
+[x] Likes:
+        
+        [x] Endpoint para dar un like a un post
+        
+>>>>>>> 9a2b8cc0585f9073c7b68100ceae0795caff0854
         [x] Endpoint para quitar like a un post
 
 USUARIOS
@@ -40,4 +49,4 @@ USUARIOS
 
 COMMENTS
 
-[] Endpoint para crear un comentario en un determinado post
+[x] Endpoint para crear un comentario en un determinado post
