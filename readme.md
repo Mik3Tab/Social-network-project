@@ -1,6 +1,7 @@
 --Proyecto red social--
 
 POSTS:
+
 [x] Endpoint para crear un post( tiene que estar autenticado)
 
 [x] Endpoint para actualizar un post ( tiene que estar autenticado)
