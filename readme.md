@@ -17,16 +17,11 @@ POSTS:
 [x] Implementa validación a la hora de crear un post para que se rellene todos los campos(salvo la imagen, que no sea requerida) y si no se hace que devuelva un mensaje
 
 [x] Paginación de 10 en 10
-<<<<<<< HEAD
-[x] Likes:
-        [x] Endpoint para dar un like a un post
-=======
 
 [x] Likes:
         
         [x] Endpoint para dar un like a un post
         
->>>>>>> 9a2b8cc0585f9073c7b68100ceae0795caff0854
         [x] Endpoint para quitar like a un post
 
 USUARIOS
@@ -50,3 +45,18 @@ USUARIOS
 COMMENTS
 
 [x] Endpoint para crear un comentario en un determinado post
+
+--EXTRAS--
+
+[x] Middleware para comprobar la autoría del comentario a la hora de editar/eliminar el mismo
+
+[x] Endpoint para buscar usuario por nombre
+
+[x] Endpoint para buscar usuario por id
+
+[x] Endpoint que nos trae la información del usuario conectado junto a sus post y número de followers, también que nos muestre el nombre de los followers que siguen al usuario conectado
+
+[X] Implementación de followers:
+        Que puedas seguir a otros usuarios
+        Que puedas dejar de seguir a otros usuarios
+
