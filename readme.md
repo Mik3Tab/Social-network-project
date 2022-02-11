@@ -1,7 +1,7 @@
---Proyecto red social--
+__Proyecto red social__
 
-POSTS:
-✅
+_POSTS_
+
 [x] Endpoint para crear un post( tiene que estar autenticado) ✅
 
 [x] Endpoint para actualizar un post ( tiene que estar autenticado) ✅
@@ -24,7 +24,7 @@ POSTS:
         
         [x] Endpoint para quitar like a un post ✅
 
-USUARIOS
+_USUARIOS_
 
 [x] Endpoint para registrar un usuario utilizando bcrypt ✅
 
@@ -42,11 +42,11 @@ USUARIOS
 
 [x] Implementa validación a la hora de crear un usuario para que se rellene todos los campos y si no se hace que devuelva un mensaje ✅
 
-COMMENTS
+_COMMENTS_
 
 [x] Endpoint para crear un comentario en un determinado post  ✅
 
---EXTRAS--
+_EXTRAS_
 
 [x] Middleware para comprobar la autoría del comentario a la hora de editar/eliminar el mismo ✅
 
